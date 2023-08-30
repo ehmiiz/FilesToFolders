@@ -4,7 +4,7 @@
 Moves all files from the current working directory into folders named after each files creation date
 
 ```powershell
-Move-FileToFolder -Path $pwd -FolderBasedOn Month -WhatIf
+Move-FileToFolder -Path $pwd -FolderBasedOn Month
 ```
 
 ```Output
