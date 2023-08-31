@@ -1,10 +1,10 @@
 # FilesToFolders
 
 
-Moves all files from the current working directory into folders named after each files creation date
+Moves all files from the current working directory into folders named after creation date
 
 ```powershell
-Move-FileToFolder -Path $pwd -FolderBasedOn Month
+Move-FileToFolder -Path $pwd -FolderNameFormat yyyy-MM
 ```
 
 ```Output
