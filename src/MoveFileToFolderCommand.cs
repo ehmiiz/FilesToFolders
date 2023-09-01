@@ -11,7 +11,7 @@ namespace FilesToFolders
         [Parameter(
             Mandatory = true,
             Position = 0)]
-        public string Path { get; set; } = Environment.CurrentDirectory;
+        public string Path { get; set; }
 
         [Parameter(
             Position = 1)]
@@ -30,6 +30,7 @@ namespace FilesToFolders
                 // the files creation date
                 Path = Path.TrimEnd('\\');
                 string[] files = Directory.GetFiles(Path);
+                
 
                 foreach (string f in files)
                 {
@@ -41,10 +42,28 @@ namespace FilesToFolders
                     WriteVerbose($"{f} will move to: {fullPath}.");
                     if (ShouldProcess($"{f} -> {fullPath}"))
                     {
-                        Directory.CreateDirectory(fullPath);
+                        
+                        bool testPath = Directory.Exists(fullPath);
+
+                        // If path does not exist, output progress and create
+                        if (!testPath)
+                        {
+                            WriteObject($"Creating dir: {fullPath}");
+                            Directory.CreateDirectory(fullPath);
+                        }
+
+                        // Get the filename only to build destination path
                         string fileName = System.IO.Path.GetFileName(f);
-                        File.Move(f, $"{fullPath}\\{fileName}");
+                        WriteObject($"Moving file: {f}");
+
+
+                        // Build the destination path and move the file
+                        string destinationPath = $"{fullPath}\\{fileName}";
+                        File.Move(f, destinationPath);
+
+                        // debug msg
                         WriteVerbose($"{f} was moved to {fullPath}\\{fileName}.");
+                    
                     }
                 }
             }

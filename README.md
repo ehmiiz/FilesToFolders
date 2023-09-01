@@ -1,28 +1,7 @@
 # FilesToFolders
 
+![Example](media/MoveFileToFolderCommand.png)
 
-Moves all files from the current working directory into folders named after creation date
+Creates folders based on date, moves files there.
 
-```powershell
-Move-FileToFolder -Path $pwd -FolderNameFormat yyyy-MM
-```
-
-```Output
-Mode                 LastWriteTime         Length Name
-----                 -------------         ------ ----
-d----           8/30/2023  1:08 PM                2022-06
-d----           8/30/2023  1:08 PM                2022-07
-d----           8/30/2023  1:08 PM                2022-08
-d----           8/30/2023  1:08 PM                2022-09
-d----           8/30/2023  1:08 PM                2022-10
-d----           8/30/2023  1:08 PM                2022-11
-d----           8/30/2023  1:08 PM                2022-12
-d----           8/30/2023  1:08 PM                2023-03
-d----           8/30/2023  1:08 PM                2023-08
-```
-
-
-```powershell
-Set-Location -Path C:\Temp
-Move-FileToFolder -FolderBasedOn Month -WhatIf
-```
+FolderNameFormat acceps `yyyy`, `yyyy-MM`, `yyyy-MM-dd`.
