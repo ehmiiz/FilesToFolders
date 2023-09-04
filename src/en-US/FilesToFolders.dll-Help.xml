@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<helpItems schema="maml" xmlns="http://msh">
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+    <command:details>
+      <command:name>Move-FileToFolder</command:name>
+      <command:verb>Move</command:verb>
+      <command:noun>FileToFolder</command:noun>
+      <maml:description>
+        <maml:para>Moves files to folders which names are based on date formats</maml:para>
+      </maml:description>
+    </command:details>
+    <maml:description>
+      <maml:para>The `Move-FileToFolder` cmdlet moves files from the path specified to the user, and creates folders with names that are based on date formats, the formats translate to: - `yyyy` -&gt; `2023`</maml:para>
+      <maml:para>- `yyyy-MM` -&gt; `2023-09`</maml:para>
+      <maml:para>- `yyyy-MM-dd` -&gt; `2023-09-04`.</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Move-FileToFolder</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+          <maml:name>Path</maml:name>
+          <maml:description>
+            <maml:para>Specify a path on the filesystem to operate on.</maml:para>
+          </maml:description>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+          <maml:name>FolderNameFormat</maml:name>
+          <maml:description>
+            <maml:para>The names are based on .NET Frameworks format specifiers, however only 3 values are allowed.</maml:para>
+            <maml:para>Multiple folders will be created if the files have different `CreationDate` values.</maml:para>
+            <maml:para>If the date would be 2023-09-04, folder name would translate to:</maml:para>
+            <maml:para>- `yyyy` -&gt; `2023`</maml:para>
+            <maml:para>- `yyyy-MM` -&gt; `2023-09`</maml:para>
+            <maml:para>- `yyyy-MM-dd` -&gt; `2023-09-04`.</maml:para>
+          </maml:description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">yyyy-MM-dd</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">yyyy-MM</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">yyyy</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+          <dev:type>
+            <maml:name>String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+          <maml:name>Confirm</maml:name>
+          <maml:description>
+            <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+          <maml:name>WhatIf</maml:name>
+          <maml:description>
+            <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+          </maml:description>
+          <dev:type>
+            <maml:name>SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="cf">
+        <maml:name>Confirm</maml:name>
+        <maml:description>
+          <maml:para>Prompts you for confirmation before running the cmdlet.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="1" aliases="none">
+        <maml:name>FolderNameFormat</maml:name>
+        <maml:description>
+          <maml:para>The names are based on .NET Frameworks format specifiers, however only 3 values are allowed.</maml:para>
+          <maml:para>Multiple folders will be created if the files have different `CreationDate` values.</maml:para>
+          <maml:para>If the date would be 2023-09-04, folder name would translate to:</maml:para>
+          <maml:para>- `yyyy` -&gt; `2023`</maml:para>
+          <maml:para>- `yyyy-MM` -&gt; `2023-09`</maml:para>
+          <maml:para>- `yyyy-MM-dd` -&gt; `2023-09-04`.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
+        <maml:name>Path</maml:name>
+        <maml:description>
+          <maml:para>Specify a path on the filesystem to operate on.</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+      </command:parameter>
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="wi">
+        <maml:name>WhatIf</maml:name>
+        <maml:description>
+          <maml:para>Shows what would happen if the cmdlet runs. The cmdlet is not run.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+        </dev:type>
+        <dev:defaultValue>False</dev:defaultValue>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name>None</maml:name>
+        </dev:type>
+        <maml:description>
+          <maml:para></maml:para>
+        </maml:description>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues />
+    <maml:alertSet>
+      <maml:alert>
+        <maml:para>## RELATED LINKS</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- Example 1 --------------------------</maml:title>
+        <dev:code>PS &gt; Move-FileToFolder -Path $pwd -FolderNameFormat yyyy-MM-dd
+
+Creating dir: C:\Temp\test\2023-09-04
+Moving file: C:\Temp\test\123.ps1
+Moving file: C:\Temp\test\321.ps1</dev:code>
+        <dev:remarks>
+          <maml:para>In this example `$pwd` equals to `C:\Temp\test`. This directory contains two files, `123.ps1` and `321.ps1`. `Move-FileToFolder` moves both files to the newly created folder `2023-09-04`.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- Example 2 --------------------------</maml:title>
+        <dev:code>PS &gt; Move-FileToFolder -Path $pwd -FolderNameFormat yyyy-MM-dd -WhatIf
+
+What if: Performing the operation "Move-FileToFolder" on target "C:\Temp\test\123.ps1 -&gt; C:\Temp\test\2023-09-04".
+What if: Performing the operation "Move-FileToFolder" on target "C:\Temp\test\321.ps1 -&gt; C:\Temp\test\2023-09-04".</dev:code>
+        <dev:remarks>
+          <maml:para>In this example `$pwd` equals to `C:\Temp\test`. This directory contains two files, `123.ps1` and `321.ps1`. `Move-FileToFolder` would have created the folder `2023-09-04` and moved the files there, but since -WhatIf was specified, nothing was changed.</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>-------------------------- Example 3 --------------------------</maml:title>
+        <dev:code>PS &gt; Move-FileToFolder -Path $pwd -FolderNameFormat yyyy-MM-dd -Verbose
+
+VERBOSE: Path exists.
+VERBOSE: C:\Temp\test\123.ps1 will move to: C:\Temp\test\2023-09-04.
+VERBOSE: Performing the operation "Move-FileToFolder" on target "C:\Temp\test\123.ps1 -&gt; C:\Temp\test\2023-09-04".
+Creating dir: C:\Temp\test\2023-09-04
+Moving file: C:\Temp\test\123.ps1
+VERBOSE: C:\Temp\test\123.ps1 was moved to C:\Temp\test\2023-09-04\123.ps1.
+VERBOSE: C:\Temp\test\321.ps1 will move to: C:\Temp\test\2023-09-04.
+VERBOSE: Performing the operation "Move-FileToFolder" on target "C:\Temp\test\321.ps1 -&gt; C:\Temp\test\2023-09-04".
+Moving file: C:\Temp\test\321.ps1
+VERBOSE: C:\Temp\test\321.ps1 was moved to C:\Temp\test\2023-09-04\321.ps1.
+VERBOSE: End!</dev:code>
+        <dev:remarks>
+          <maml:para>In this example `$pwd` equals to `C:\Temp\test`. This directory contains two files, `123.ps1` and `321.ps1`. `Move-FileToFolder` moves both files to the newly created folder `2023-09-04`, and outputs progress to the verbose and output stream.</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <command:relatedLinks />
+  </command:command>
+</helpItems>
