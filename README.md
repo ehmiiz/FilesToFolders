@@ -4,4 +4,6 @@
 
 Creates folders based on date, moves files there.
 
-FolderNameFormat acceps `yyyy`, `yyyy-MM`, `yyyy-MM-dd`.
+FolderNameFormat accepts `yyyy`, `yyyy-MM`, `yyyy-MM-dd`.
+
+Currently only supports Windows.
