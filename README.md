@@ -14,4 +14,10 @@
 
 ## Example
 
-![Example](media/MoveFileToFolderCommand.png)
+List file names and creation date, move them to structured folders
+
+![Example](media/MoveFileToFolderCommand_New.png)
+
+List result of `Move-FileToFolder`
+
+![Example](media/MoveFileToFolderCommand_NewTwo.png)
