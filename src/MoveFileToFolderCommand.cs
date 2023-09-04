@@ -28,7 +28,6 @@ namespace FilesToFolders
                 WriteVerbose("Path exists.");
                 // Create two variables with the files full path and
                 // the files creation date
-                Path = Path.TrimEnd('\\');
                 string[] files = Directory.GetFiles(Path);
                 
 
@@ -38,7 +37,7 @@ namespace FilesToFolders
                     DateTime d = File.GetCreationTime(f);
                     string folderNameFormat = d.ToString(FolderNameFormat);
 
-                    string fullPath = $"{Path}\\{folderNameFormat}";
+                    string fullPath = System.IO.Path.Combine(Path, folderNameFormat);
                     WriteVerbose($"{f} will move to: {fullPath}.");
                     if (ShouldProcess($"{f} -> {fullPath}"))
                     {
@@ -58,11 +57,11 @@ namespace FilesToFolders
 
 
                         // Build the destination path and move the file
-                        string destinationPath = $"{fullPath}\\{fileName}";
+                        string destinationPath = System.IO.Path.Combine(fullPath,fileName);
                         File.Move(f, destinationPath);
 
-                        // debug msg
-                        WriteVerbose($"{f} was moved to {fullPath}\\{fileName}.");
+                        // Verbose msg
+                        WriteVerbose($"{f} was moved to {destinationPath}.");
                     
                     }
                 }
