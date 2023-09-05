@@ -2,6 +2,12 @@
 
 ## 📜 Read [docs](https://github.com/ehmiiz/FilesToFolders/blob/master/docs/Move-FileToFolder.md) before use 👍
 
+## Install via PSGallery
+
+`Install-Module -Name 'FilesToFolders'`
+
+## Features
+
 - File(s)toFolder(s) is built with automation in mind
 
 - Setup a time scheduled action or trigger using your desired automation platform, to automatically move files to structured folders
