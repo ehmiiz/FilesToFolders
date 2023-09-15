@@ -34,7 +34,7 @@ Moving file: C:\Temp\test\123.ps1
 Moving file: C:\Temp\test\321.ps1
 ```
 
-In this example `$pwd` equals to `C:\Temp\test`. This directory contains two files, `123.ps1` and `321.ps1`. `Move-FileToFolder` moves both files to the newly created folder `2023-09-04`.
+In this example `$pwd` equals to `C:\Temp\test`. This directory contains two files, `123.ps1` and `321.ps1`, both files was created 2023-09-04. `Move-FileToFolder` moves both files to the newly created folder `2023-09-04`.
 
 ### Example 2
 ```powershell
